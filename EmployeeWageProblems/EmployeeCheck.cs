@@ -12,14 +12,16 @@ namespace EmployeeWageProblems
         public const int IS_FULL_TIME = 2;
         public const int EMP_PER_RATE_HOUR = 20;
         public const int NUM_OF_WORKING_DAYS = 5;
+        public const int MAX_HRS_IN_MONTH = 10;
         public static void EmployeeAttendance()
         {
             
             int empHour = 0;
-            int empWage = 0;
-            int totalEmployee = 0;
-            for (int days = 0; days < NUM_OF_WORKING_DAYS; days++) 
+            int totalEmpHour = 0;
+            int totalWorkingDays = 0;
+            while (totalEmpHour<=MAX_HRS_IN_MONTH) 
             {
+                totalWorkingDays++;
                 Random rdm = new Random();
                 int empCheck = rdm.Next(3);
 
@@ -38,14 +40,16 @@ namespace EmployeeWageProblems
                         break;
                 }
 
-                empWage = empHour * EMP_PER_RATE_HOUR;
-                Console.WriteLine("Employee Wage: " + empWage);
-                totalEmployee += empWage;
+                totalEmpHour = totalEmpHour + empHour;
+                Console.WriteLine("Day#: " + totalWorkingDays+ "Emp Hour :" + empHour);
+               
 
 
             }
+            int totalEmpWage = totalEmpHour * EMP_PER_RATE_HOUR;
 
-            Console.WriteLine("Total Employee: " + totalEmployee);
+           
+            Console.WriteLine("total Employee Wage: " + totalEmpWage);
 
 
 

@@ -9,6 +9,7 @@ namespace EmployeeWageComputation
         {
             Console.WriteLine("Welcome to Employee Wage Computation");
             EmployeeCheck.EmployeeAttendance();
+           
 
         }
     }
