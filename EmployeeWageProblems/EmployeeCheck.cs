@@ -8,28 +8,32 @@ namespace EmployeeWageProblems
 {
     public class EmployeeCheck
     {
+        public const int IS_PART_TIME = 1;
+        public const int IS_FULL_TIME = 2;
+        public const int EMP_PER_RATE_HOUR = 20;
         public static void EmployeeAttendance()
         {
-            int EMP_PER_RATE_HOUR = 20;
-            int IS_FULL_TIME = 1;
-            int IS_PART_TIME = 2;
+            
             int empHour = 0;
             int empWage = 0;
             Random rdm = new Random();
             int empCheck = rdm.Next(3);
-            Console.WriteLine("Random value: " + empCheck);
-            if (empCheck == IS_FULL_TIME)
+
+            switch (empCheck)
             {
-                empHour = 8;
+                case IS_PART_TIME:
+                    empHour = 4;
+                    break;
+
+                case IS_FULL_TIME:
+                    empHour = 8;
+                    break;
+
+                default:
+                    empHour = 0;
+                    break;
             }
-            else if(empCheck == IS_PART_TIME)
-            {
-                empHour = 4;
-            }
-            else 
-            {
-                empHour = 0;
-            }
+            
             empWage = empHour * EMP_PER_RATE_HOUR;
             Console.WriteLine("Employee Wage: "+ empWage);
 
