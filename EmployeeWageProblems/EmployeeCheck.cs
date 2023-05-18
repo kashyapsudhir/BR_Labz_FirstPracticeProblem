@@ -8,12 +8,15 @@ namespace EmployeeWageProblems
 {
     public class EmployeeCheck
     {
+
+        //Class variable declare here according to UC7
+
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
         public const int EMP_PER_RATE_HOUR = 20;
         public const int NUM_OF_WORKING_DAYS = 5;
         public const int MAX_HRS_IN_MONTH = 10;
-        public static void EmployeeAttendance()
+        public static void EmployeeAttendance() //method here acording to UC7
         {
             
             int empHour = 0;
@@ -28,7 +31,7 @@ namespace EmployeeWageProblems
                 switch (empCheck)
                 {
                     case IS_PART_TIME:
-                        empHour = 4;
+                        empHour += 4;
                         break;
 
                     case IS_FULL_TIME:

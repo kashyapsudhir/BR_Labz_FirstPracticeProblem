@@ -7,9 +7,12 @@ namespace EmployeeWageComputation
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Employee Wage Computation");
+            Console.WriteLine("Welcome to Employee Wage Computation day 8 using class and method ");
+
+
             EmployeeCheck.EmployeeAttendance();
            
+
 
         }
     }
