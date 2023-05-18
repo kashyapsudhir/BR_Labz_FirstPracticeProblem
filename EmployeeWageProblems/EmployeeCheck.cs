@@ -9,30 +9,33 @@ namespace EmployeeWageProblems
     public class EmployeeCheck
     {
 
-        //Class variable declare here according to UC8
 
-        public const int IS_PART_TIME = 1;  //it is constant variable beacause fullTime and Part Time is in all company
+
+        public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
 
-
+        public string Company;
         public int EMP_PER_RATE_HOUR;
         public int NUM_OF_WORKING_DAYS;
         public int MAX_HRS_IN_MONTH;
-        public void EmployeeAttendance(int emp_per_rate_hour,int num_of_working_days, int max_hrs_in_month) 
-            //method here and parameter pass 
+        public int TOTAL_EMP_WAGE;
+        public EmployeeCheck(string company, int emp_per_rate_hour, int num_of_working_days, int max_hrs_in_month)
+        //Parameter constructor
         {
 
-            //it is initalize when will be argument pass in method
+            this.Company = company;
             this.EMP_PER_RATE_HOUR = emp_per_rate_hour;
             this.NUM_OF_WORKING_DAYS = num_of_working_days;
             this.MAX_HRS_IN_MONTH = max_hrs_in_month;
 
-
-
+        }
+        public void CompanyWage()
+        {
             int empHour = 0;
             int totalEmpHour = 0;
             int totalWorkingDays = 0;
-            while (totalEmpHour<=MAX_HRS_IN_MONTH) 
+
+            while (totalEmpHour <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
             {
                 totalWorkingDays++;
                 Random rdm = new Random();
@@ -50,23 +53,28 @@ namespace EmployeeWageProblems
 
                     default:
                         empHour = 0;
+
                         break;
+
                 }
 
+
+
                 totalEmpHour = totalEmpHour + empHour;
-                Console.WriteLine("Day#: " + totalWorkingDays+ "Emp Hour :" + empHour);
-               
-
-
+                Console.WriteLine("Day#: " + totalWorkingDays + "Emp Hour :" + empHour);
             }
+
+
+
             int totalEmpWage = totalEmpHour * EMP_PER_RATE_HOUR;
 
-           
+
             Console.WriteLine("total Employee Wage: " + totalEmpWage);
-
-
-
         }
-
     }
+
+
 }
+
+
+
